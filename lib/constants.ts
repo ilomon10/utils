@@ -32,32 +32,6 @@ export const navItems: NavItem[] = [
     ],
   },
   {
-    icon: ArchiveIcon,
-    title: "Compression",
-    href: "/compression",
-    description:
-      "Compress and decompress files with multiple formats and optimization levels",
-    features: [
-      "ZIP/RAR Support",
-      "Image Compression",
-      "Batch Processing",
-      "Size Optimization",
-    ],
-  },
-  {
-    icon: RefreshCwIcon,
-    title: "Converters",
-    href: "/converter",
-    description:
-      "Convert between different file formats, units, and data types seamlessly",
-    features: [
-      "File Conversion",
-      "Unit Conversion",
-      "Currency Exchange",
-      "Base Conversion",
-    ],
-  },
-  {
     icon: RulerIcon,
     title: "Physics",
     href: "/physics/meter",
@@ -94,6 +68,32 @@ export const navItems: NavItem[] = [
       "Investment Analysis",
       "Tax Calculator",
       "Budget Planner",
+    ],
+  },
+  {
+    icon: ArchiveIcon,
+    title: "Compression",
+    href: "/compression",
+    description:
+      "Compress and decompress files with multiple formats and optimization levels",
+    features: [
+      "ZIP/RAR Support",
+      "Image Compression",
+      "Batch Processing",
+      "Size Optimization",
+    ],
+  },
+  {
+    icon: RefreshCwIcon,
+    title: "Converters",
+    href: "/converter",
+    description:
+      "Convert between different file formats, units, and data types seamlessly",
+    features: [
+      "File Conversion",
+      "Unit Conversion",
+      "Currency Exchange",
+      "Base Conversion",
     ],
   },
 ];
