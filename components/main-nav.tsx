@@ -1,24 +1,11 @@
 "use client";
 
-import type React from "react";
-
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import {
-  Menu,
-  X,
-  Zap,
-  ChevronDown,
-  ArchiveIcon,
-  CalculatorIcon,
-  CodeIcon,
-  DollarSignIcon,
-  RefreshCwIcon,
-  RulerIcon,
-} from "lucide-react";
+import { Menu, X, Zap, ChevronDown } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
