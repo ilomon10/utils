@@ -16,11 +16,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Utils",
-  description: "Sum of all Utilities",
+  title: "Physics - Utils",
+  description: "Sum of all physics Utilities",
 };
 
-export default function RootMathLayout({
+export default function RootPhysicsLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

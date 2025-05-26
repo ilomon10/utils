@@ -3,12 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import {
-  Calculator,
-  Archive,
-  RefreshCw,
-  Ruler,
-  Code,
-  DollarSign,
   Zap,
   Github,
   Twitter,
@@ -17,17 +11,9 @@ import {
   Instagram,
   ArrowRight,
 } from "lucide-react";
+import { navItems } from "@/lib/constants";
 
 export function SiteFooter() {
-  const toolCategories = [
-    { name: "Math Models", href: "/math-models", icon: Calculator },
-    { name: "Compression", href: "/compression", icon: Archive },
-    { name: "Converters", href: "/converters", icon: RefreshCw },
-    { name: "Science Meters", href: "/science-meters", icon: Ruler },
-    { name: "Code Snippets", href: "/code-snippets", icon: Code },
-    { name: "Finance Toolkit", href: "/finance-toolkit", icon: DollarSign },
-  ];
-
   const companyLinks = [
     { name: "About Us", href: "#" },
     { name: "Careers", href: "#" },
@@ -97,14 +83,14 @@ export function SiteFooter() {
           <div className="space-y-4">
             <h3 className="text-lg font-medium">Tools</h3>
             <ul className="space-y-2">
-              {toolCategories.map((tool) => (
-                <li key={tool.name}>
+              {navItems.map((tool) => (
+                <li key={tool.href}>
                   <Link
                     href={tool.href}
                     className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     <tool.icon className="mr-2 h-4 w-4" />
-                    {tool.name}
+                    {tool.title}
                   </Link>
                 </li>
               ))}

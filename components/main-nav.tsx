@@ -8,16 +8,16 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
-  Calculator,
-  Archive,
-  RefreshCw,
-  Ruler,
-  Code,
-  DollarSign,
   Menu,
   X,
   Zap,
   ChevronDown,
+  ArchiveIcon,
+  CalculatorIcon,
+  CodeIcon,
+  DollarSignIcon,
+  RefreshCwIcon,
+  RulerIcon,
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -26,56 +26,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-
-interface NavItem {
-  title: string;
-  href: string;
-  icon: React.ElementType;
-  description: string;
-}
+import { navItems } from "@/lib/constants";
 
 export function MainNav({ className }: { className?: string }) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-
-  const navItems: NavItem[] = [
-    {
-      title: "Math Models",
-      href: "/math-models",
-      icon: Calculator,
-      description: "Advanced mathematical calculations and tools",
-    },
-    {
-      title: "Compression",
-      href: "/compression",
-      icon: Archive,
-      description: "File and media compression utilities",
-    },
-    {
-      title: "Converters",
-      href: "/converters",
-      icon: RefreshCw,
-      description: "Convert between formats, units, and more",
-    },
-    {
-      title: "Science Meters",
-      href: "/science-meters",
-      icon: Ruler,
-      description: "Scientific measurement and conversion tools",
-    },
-    {
-      title: "Code Snippets",
-      href: "/code-snippets",
-      icon: Code,
-      description: "Store and organize code snippets",
-    },
-    {
-      title: "Finance Toolkit",
-      href: "/finance-toolkit",
-      icon: DollarSign,
-      description: "Financial calculators and planning tools",
-    },
-  ];
 
   return (
     <div className={cn("flex items-center space-x-4 lg:space-x-6", className)}>

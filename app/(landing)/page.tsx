@@ -8,12 +8,6 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
-  CalculatorIcon,
-  ArchiveIcon,
-  RefreshCwIcon,
-  RulerIcon,
-  CodeIcon,
-  DollarSignIcon,
   ZapIcon,
   ShieldIcon,
   ClockIcon,
@@ -24,88 +18,10 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { navItems } from "@/lib/constants";
 
 export default function LandingPage() {
-  const tools = [
-    {
-      icon: CalculatorIcon,
-      title: "Math Models",
-      href: "/math/calc",
-      description:
-        "Advanced mathematical calculations, equation solvers, and statistical analysis tools",
-      features: [
-        "Scientific Calculator",
-        "Equation Solver",
-        "Statistics",
-        "Graphing",
-      ],
-    },
-    {
-      icon: ArchiveIcon,
-      title: "Compression",
-      href: "/compression",
-      description:
-        "Compress and decompress files with multiple formats and optimization levels",
-      features: [
-        "ZIP/RAR Support",
-        "Image Compression",
-        "Batch Processing",
-        "Size Optimization",
-      ],
-    },
-    {
-      icon: RefreshCwIcon,
-      title: "Converters",
-      href: "/converters",
-      description:
-        "Convert between different file formats, units, and data types seamlessly",
-      features: [
-        "File Conversion",
-        "Unit Conversion",
-        "Currency Exchange",
-        "Base Conversion",
-      ],
-    },
-    {
-      icon: RulerIcon,
-      title: "Science Meters",
-      href: "/science-meters",
-      description:
-        "Precise scientific unit conversions and measurement tools for research",
-      features: [
-        "Length & Distance",
-        "Weight & Mass",
-        "Temperature",
-        "Energy & Power",
-      ],
-    },
-    {
-      icon: CodeIcon,
-      title: "Code Snippets",
-      href: "/code-snippets",
-      description:
-        "Store, organize, and share your code snippets across multiple languages",
-      features: [
-        "Syntax Highlighting",
-        "Language Support",
-        "Search & Filter",
-        "Export Options",
-      ],
-    },
-    {
-      icon: DollarSignIcon,
-      title: "Finance Toolkit",
-      href: "/finance-toolkit",
-      description:
-        "Comprehensive financial calculators and analysis tools for smart decisions",
-      features: [
-        "Loan Calculator",
-        "Investment Analysis",
-        "Tax Calculator",
-        "Budget Planner",
-      ],
-    },
-  ];
+  const tools = navItems;
 
   const benefits = [
     {
