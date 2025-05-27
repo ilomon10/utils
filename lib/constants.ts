@@ -5,6 +5,7 @@ import {
   RulerIcon,
   CodeIcon,
   DollarSignIcon,
+  CircuitBoardIcon,
 } from "lucide-react";
 
 export {};
@@ -22,6 +23,19 @@ export const navItems: NavItem[] = [
     icon: CalculatorIcon,
     title: "Math Models",
     href: "/math/calc",
+    description:
+      "Advanced mathematical calculations, equation solvers, and statistical analysis tools",
+    features: [
+      "Scientific Calculator",
+      "Equation Solver",
+      "Statistics",
+      "Graphing",
+    ],
+  },
+  {
+    icon: CircuitBoardIcon,
+    title: "Electronics",
+    href: "/electronics/voltage-divider",
     description:
       "Advanced mathematical calculations, equation solvers, and statistical analysis tools",
     features: [

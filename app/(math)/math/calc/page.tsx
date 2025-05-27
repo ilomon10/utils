@@ -16,6 +16,7 @@ import {
   PieChart,
   ArrowRight,
 } from "lucide-react";
+import { MathCalculator } from "@/components/math/calculator";
 
 export default function MathCalcPage() {
   const calculators = [
@@ -72,8 +73,8 @@ export default function MathCalcPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Interactive Demo */}
-      <section className="w-full py-12 md:py-24 bg-muted/50">
-        <div className="container px-4 md:px-6">
+      <section className="w-full h-[100vh] py-12 md:py-24 bg-muted/50">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center mb-8">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter">
@@ -96,55 +97,7 @@ export default function MathCalcPage() {
                 value="calculator"
                 className="p-4 border rounded-lg mt-2 bg-background"
               >
-                <div className="space-y-4">
-                  <div className="grid grid-cols-1 gap-2">
-                    <div className="space-y-2">
-                      <Label htmlFor="result">Result</Label>
-                      <Input
-                        id="result"
-                        readOnly
-                        value="0"
-                        className="text-right text-lg font-mono"
-                      />
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-4 gap-2">
-                    {[
-                      "7",
-                      "8",
-                      "9",
-                      "÷",
-                      "4",
-                      "5",
-                      "6",
-                      "×",
-                      "1",
-                      "2",
-                      "3",
-                      "-",
-                      "0",
-                      ".",
-                      "=",
-                      "+",
-                    ].map((button, index) => (
-                      <Button
-                        key={index}
-                        variant={["="].includes(button) ? "default" : "outline"}
-                      >
-                        {button}
-                      </Button>
-                    ))}
-                  </div>
-                  <div className="grid grid-cols-4 gap-2">
-                    {["C", "CE", "%", "√", "sin", "cos", "tan", "^"].map(
-                      (button, index) => (
-                        <Button key={index} variant="outline" size="sm">
-                          {button}
-                        </Button>
-                      )
-                    )}
-                  </div>
-                </div>
+                <MathCalculator />
               </TabsContent>
               <TabsContent
                 value="equation"
@@ -187,7 +140,7 @@ export default function MathCalcPage() {
 
       {/* Hero Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-muted/50 to-background">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">
@@ -238,7 +191,7 @@ export default function MathCalcPage() {
 
       {/* CTA Section */}
       <section className="w-full py-12 md:py-24">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter">

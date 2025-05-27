@@ -78,7 +78,7 @@ export default function CodeSnippetsPage() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-muted/50 to-background">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">
@@ -105,7 +105,7 @@ export default function CodeSnippetsPage() {
 
       {/* Search Section */}
       <section className="w-full py-12 md:py-16 bg-muted/30">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="mx-auto max-w-2xl space-y-4">
             <div className="flex gap-2">
               <div className="flex-1">
@@ -137,7 +137,7 @@ export default function CodeSnippetsPage() {
 
       {/* Featured Snippets */}
       <section className="w-full py-12 md:py-24">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-start space-y-4 mb-8">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter">
@@ -216,7 +216,7 @@ export default function CodeSnippetsPage() {
 
       {/* Create Snippet Demo */}
       <section className="w-full py-12 md:py-24 bg-muted/50">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center mb-8">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter">
@@ -327,7 +327,7 @@ export default function CodeSnippetsPage() {
 
       {/* CTA Section */}
       <section className="w-full py-12 md:py-24">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter">
