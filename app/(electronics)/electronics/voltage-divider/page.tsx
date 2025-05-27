@@ -17,9 +17,7 @@ export default function ElectronicsVoltageDividerPage() {
           </div>
 
           <div className="mx-auto max-w-lg">
-            <div className="p-4 border rounded-lg mt-2 bg-background">
-              <ElectronicsVoltageDivider />
-            </div>
+            <ElectronicsVoltageDivider />
           </div>
         </div>
       </section>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "@/app/globals.css";
-import "./global-electronics.css";
+import localFont from "next/font/local";
+import "@/styles/globals.css";
+import "@/styles/global-electronics.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -21,14 +21,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-const geistSans = Geist({
+const geistSans = localFont({
+  src: "../../assets/fonts/GeistVF.woff",
   variable: "--font-geist-sans",
-  subsets: ["latin"],
 });
-
-const geistMono = Geist_Mono({
+const geistMono = localFont({
+  src: "../../assets/fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
-  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -93,9 +92,9 @@ export default function RootElectronicsLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased font-[family-name:var(--font-geist-sans)]`}
       >
         <ThemeProvider
           attribute="class"
