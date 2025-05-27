@@ -10,10 +10,8 @@ type Inputs = {
 export default function solveVoltageDivider(inputs: Inputs): Inputs {
   const { v_s, r_1, r_2, v_out } = inputs;
   const knowns = { v_s, r_1, r_2, v_out };
-  const defined = Object.entries(knowns).filter(([_, v]) => v !== undefined);
-  const missing = Object.entries(knowns).filter(([_, v]) => v === undefined);
-
-  console.log(inputs, defined, missing);
+  const defined = Object.entries(knowns).filter(([, v]) => v !== undefined);
+  const missing = Object.entries(knowns).filter(([, v]) => v === undefined);
 
   if (defined.length !== 3 || missing.length !== 1) {
     throw new Error("Please provide exactly 3 known values.");

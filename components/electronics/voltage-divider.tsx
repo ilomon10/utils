@@ -1,10 +1,8 @@
 "use client";
 
-import { MathCalculator } from "@/components/math/calculator";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -37,7 +35,7 @@ export const ElectronicsVoltageDivider = () => {
       v_out: values.v_out ? Number(values.v_out) : undefined,
     });
     for (const [key, value] of Object.entries(result)) {
-      form.setValue(key as any, String(value));
+      form.setValue(key as keyof typeof values, String(value));
     }
   };
 

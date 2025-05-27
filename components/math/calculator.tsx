@@ -15,7 +15,7 @@ export const MathCalculator = () => {
         try {
           const evalResult = eval(input);
           setResult(evalResult);
-        } catch (err) {
+        } catch {
           setResult("Math Error");
         }
         setInput("");
