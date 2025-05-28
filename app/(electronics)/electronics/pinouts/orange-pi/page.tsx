@@ -1,6 +1,7 @@
 import PiPins, {
   PinType,
 } from "@/components/electronics/pinout/raspberry-pi/pins";
+import { Metadata } from "next";
 
 const PINS_LIST: {
   top: PinType[];
@@ -271,6 +272,12 @@ const PINS_LIST: {
   ],
 };
 
+export const metadata: Metadata = {
+  title: "Orange Pi GPIO Pinout & Function Reference | Utils",
+  description:
+    "Complete Orange Pi pinout diagram: GPIO, power, UART, I²C, SPI and more. Find the right pins for your project in seconds.",
+};
+
 export default function ElectronicsPinoutOrangePiPage() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -279,10 +286,11 @@ export default function ElectronicsPinoutOrangePiPage() {
           <div className="flex flex-col items-center space-y-4 text-center mb-8">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter">
-                Pinout Orange PI
+                Orange Pi Pinout Reference
               </h2>
               <p className="mx-auto max-w-[700px] text-muted-foreground">
-                Get a taste of our math tools with this simple calculator demo
+                Quickly identify every header pin on your Orange Pi board—GPIO,
+                power rails, UART, SPI, I²C, and more.
               </p>
             </div>
           </div>

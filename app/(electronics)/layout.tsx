@@ -42,7 +42,7 @@ const tools = [
     title: "Voltage Divider",
     path: "/electronics/voltage-divider",
     description:
-      "Perform complex mathematical calculations with our advanced scientific calculator",
+      "Quickly design and compute resistor values for stable, precise voltage outputs in your electronics projects.",
     features: [
       "Trigonometric functions",
       "Logarithmic calculations",
@@ -55,7 +55,7 @@ const tools = [
     title: "Raspberry Pi Pinout",
     path: "/electronics/pinouts/raspberry-pi",
     description:
-      "Solve linear, quadratic, and polynomial equations with step-by-step solutions",
+      "Quickly identify every pin on your Pi’s 40-pin header—GPIO, power rails, UART, SPI, I²C, PWM, ground—and never miswire your project again.",
     features: [
       "Linear equations",
       "Quadratic formula",
@@ -68,7 +68,7 @@ const tools = [
     title: "Orange Pi Pinout",
     path: "/electronics/pinouts/orange-pi",
     description:
-      "Analyze data sets with comprehensive statistical analysis tools",
+      "Quickly identify every header pin on your Orange Pi board—GPIO, power rails, UART, SPI, I²C, and more.",
     features: [
       "Mean, median, mode",
       "Standard deviation",

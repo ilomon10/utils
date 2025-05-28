@@ -2,6 +2,13 @@ import { ElectronicsVoltageDivider } from "@/components/electronics/voltage-divi
 import imageVoltageDivider1 from "@/assets/electronics/voltage-divider-calculator-1.png";
 import imageVoltageDivider2 from "@/assets/electronics/voltage-divider-calculator-2.png";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Voltage Divider Calculator & Tutorial | Utils",
+  description:
+    "Learn how to design and calculate voltage dividers. Step-by-step guide, formula, worked example, and best practices for stable voltage outputs.",
+};
 
 export default function ElectronicsVoltageDividerPage() {
   return (
@@ -11,7 +18,7 @@ export default function ElectronicsVoltageDividerPage() {
           <div className="flex flex-col items-center space-y-4 text-center mb-8">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter">
-                Voltage Divider
+                Voltage Divider Guide & Calculator
               </h2>
               <p className="mx-auto max-w-[700px] text-muted-foreground">
                 Get a taste of our math tools with this simple calculator demo
