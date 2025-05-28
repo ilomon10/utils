@@ -12,7 +12,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { navItems } from "@/lib/constants";
 
 export function MainNav({ className }: { className?: string }) {
@@ -73,26 +79,14 @@ export function MainNav({ className }: { className?: string }) {
             </Button>
           </SheetTrigger>
           <SheetContent side="left" className="w-[300px] sm:w-[400px]">
-            <div className="flex items-center justify-between mb-6">
-              <Link
-                href="/"
-                className="flex items-center space-x-2"
-                onClick={() => setIsOpen(false)}
-              >
+            <SheetHeader>
+              <SheetTitle className="flex items-center space-x-2">
                 <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
                   <Zap className="h-4 w-4 text-primary-foreground" />
                 </div>
                 <span className="font-bold">UtilityKit</span>
-              </Link>
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setIsOpen(false)}
-              >
-                <X className="h-5 w-5" />
-                <span className="sr-only">Close</span>
-              </Button>
-            </div>
+              </SheetTitle>
+            </SheetHeader>
             <div className="grid gap-2 py-6">
               {navItems.map((item) => (
                 <Link
