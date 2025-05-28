@@ -1,0 +1,107 @@
+.pinout {
+  @apply flex relative w-full;
+  padding: calc(var(--spacing) * 1);
+  /* gap: calc(var(--spacing) * 1); */
+
+  .board {
+    @apply absolute;
+
+    border-radius: calc(var(--spacing) * 2);
+
+    inset: 0;
+    background-color: var(--color-emerald-600);
+
+    &::before {
+      @apply absolute;
+      content: "";
+      top: 0;
+      bottom: 0;
+      left: 50%;
+
+      transform: translateX(-50%);
+      width: calc(var(--spacing) * 16);
+      background-color: var(--color-emerald-900);
+    }
+  }
+
+  ul {
+    @apply flex flex-col relative grow w-[1px] shrink-0;
+    gap: calc(var(--spacing) * 1);
+
+    li {
+      gap: calc(var(--spacing) * 4);
+      > a {
+        @apply flex justify-between items-center;
+        padding-inline: calc(var(--spacing) * 1);
+
+        .label {
+          @apply flex justify-between grow;
+
+          .name {
+            @apply inline-flex items-end whitespace-nowrap;
+            gap: calc(var(--spacing) * 1);
+            > small {
+              color: var(--color-emerald-900);
+            }
+          }
+          .phys {
+            margin-inline: 20px;
+            color: var(--color-emerald-700);
+          }
+        }
+        .pin {
+          @apply relative;
+          --pin-size: calc(var(--spacing) * 5);
+          height: var(--pin-size);
+          width: var(--pin-size);
+          border-radius: 100px;
+          display: block;
+          background-color: var(--color-orange-600);
+
+          &:before {
+            @apply absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            content: "";
+            display: block;
+            --pin-core-size: calc(var(--spacing) * 3 / 2);
+            height: var(--pin-core-size);
+            width: var(--pin-core-size);
+            background-color: var(--color-white);
+            border-radius: 100px;
+          }
+        }
+
+        &:hover {
+          background-color: white;
+        }
+      }
+    }
+  }
+
+  .bottom {
+    @apply text-left;
+    li > a {
+      border-radius: 0 100px 100px 0;
+    }
+  }
+  .top {
+    @apply text-right;
+    li {
+      > a {
+        @apply flex-row-reverse;
+        border-radius: 100px 0 0 100px;
+
+        .label {
+          @apply flex-row-reverse;
+
+          .name {
+            @apply flex-row-reverse;
+          }
+        }
+      }
+    }
+  }
+}

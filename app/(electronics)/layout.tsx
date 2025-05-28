@@ -2,17 +2,12 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "@/styles/globals.css";
 import "@/styles/global-electronics.css";
+import "@/styles/electronics-pinout.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Button } from "@/components/ui/button";
-import {
-  ActivityIcon,
-  ArrowRightIcon,
-  CalculatorIcon,
-  LineChartIcon,
-  PieChartIcon,
-} from "lucide-react";
+import { ArrowRightIcon, CircuitBoardIcon } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -20,6 +15,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { SiRaspberrypi } from "@icons-pack/react-simple-icons";
+import Link from "next/link";
 
 const geistSans = localFont({
   src: "../../assets/fonts/GeistVF.woff",
@@ -35,10 +32,11 @@ export const metadata: Metadata = {
   description: "Sum of all Utilities",
 };
 
-const calculators = [
+const tools = [
   {
-    icon: CalculatorIcon,
-    title: "Scientific Calculator",
+    icon: CircuitBoardIcon,
+    title: "Voltage Divider",
+    path: "/electronics/voltage-divider",
     description:
       "Perform complex mathematical calculations with our advanced scientific calculator",
     features: [
@@ -49,8 +47,9 @@ const calculators = [
     ],
   },
   {
-    icon: ActivityIcon,
-    title: "Equation Solver",
+    icon: SiRaspberrypi,
+    title: "Raspberry Pi Pinout",
+    path: "/electronics/pinouts/raspberry-pi",
     description:
       "Solve linear, quadratic, and polynomial equations with step-by-step solutions",
     features: [
@@ -60,30 +59,30 @@ const calculators = [
       "Polynomial roots",
     ],
   },
-  {
-    icon: LineChartIcon,
-    title: "Statistics Tools",
-    description:
-      "Analyze data sets with comprehensive statistical analysis tools",
-    features: [
-      "Mean, median, mode",
-      "Standard deviation",
-      "Correlation analysis",
-      "Regression models",
-    ],
-  },
-  {
-    icon: PieChartIcon,
-    title: "Graphing Calculator",
-    description:
-      "Visualize functions and data with our interactive graphing calculator",
-    features: [
-      "Function plotting",
-      "Data visualization",
-      "Multiple graph overlays",
-      "Customizable axes",
-    ],
-  },
+  // {
+  //   icon: LineChartIcon,
+  //   title: "Statistics Tools",
+  //   description:
+  //     "Analyze data sets with comprehensive statistical analysis tools",
+  //   features: [
+  //     "Mean, median, mode",
+  //     "Standard deviation",
+  //     "Correlation analysis",
+  //     "Regression models",
+  //   ],
+  // },
+  // {
+  //   icon: PieChartIcon,
+  //   title: "Graphing Calculator",
+  //   description:
+  //     "Visualize functions and data with our interactive graphing calculator",
+  //   features: [
+  //     "Function plotting",
+  //     "Data visualization",
+  //     "Multiple graph overlays",
+  //     "Customizable axes",
+  //   ],
+  // },
 ];
 
 export default function RootElectronicsLayout({
@@ -113,7 +112,7 @@ export default function RootElectronicsLayout({
                   <div className="flex flex-col items-center space-y-4 text-center">
                     <div className="space-y-2">
                       <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                        Math Models & Calculators
+                        Electronics & Calculators
                       </h1>
                       <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
                         Advanced mathematical tools for calculations, equation
@@ -128,7 +127,7 @@ export default function RootElectronicsLayout({
               <section className="w-full py-12 md:py-24">
                 <div className="container mx-auto px-4 md:px-6">
                   <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                    {calculators.map((calculator, index) => (
+                    {tools.map((tool, index) => (
                       <Card
                         key={index}
                         className="transition-all hover:shadow-md"
@@ -136,28 +135,26 @@ export default function RootElectronicsLayout({
                         <CardHeader>
                           <div className="flex items-center space-x-2">
                             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                              <calculator.icon className="h-5 w-5 text-primary" />
+                              <tool.icon className="h-5 w-5 text-primary" />
                             </div>
-                            <CardTitle>{calculator.title}</CardTitle>
+                            <CardTitle>{tool.title}</CardTitle>
                           </div>
-                          <CardDescription>
-                            {calculator.description}
-                          </CardDescription>
+                          <CardDescription>{tool.description}</CardDescription>
                         </CardHeader>
                         <CardContent>
                           <ul className="space-y-2 mb-4">
-                            {calculator.features.map(
-                              (feature, featureIndex) => (
-                                <li
-                                  key={featureIndex}
-                                  className="text-sm text-muted-foreground"
-                                >
-                                  • {feature}
-                                </li>
-                              )
-                            )}
+                            {tool.features.map((feature, featureIndex) => (
+                              <li
+                                key={featureIndex}
+                                className="text-sm text-muted-foreground"
+                              >
+                                • {feature}
+                              </li>
+                            ))}
                           </ul>
-                          <Button className="w-full">Launch Tool</Button>
+                          <Button className="w-full" asChild>
+                            <Link href={tool.path}>Launch Tool</Link>
+                          </Button>
                         </CardContent>
                       </Card>
                     ))}
