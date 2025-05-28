@@ -72,6 +72,13 @@
             background-color: var(--color-white);
             border-radius: 100px;
           }
+
+          &.ground {
+            background-color: var(--color-black);
+          }
+          &.source {
+            background-color: var(--color-red-700);
+          }
         }
 
         &:hover {

@@ -1,6 +1,7 @@
 import { ElectronicsVoltageDivider } from "@/components/electronics/voltage-divider";
 import imageVoltageDivider1 from "@/assets/electronics/voltage-divider-calculator-1.png";
 import imageVoltageDivider2 from "@/assets/electronics/voltage-divider-calculator-2.png";
+import Image from "next/image";
 
 export default function ElectronicsVoltageDividerPage() {
   return (
@@ -20,14 +21,20 @@ export default function ElectronicsVoltageDividerPage() {
 
           <div className="container mx-auto max-w-2xl flex flex-col-reverse md:flex-row gap-2 md:justify-stretch items-center">
             <div className="max-w-lg md:w-1/2 flex md:flex-col gap-4">
-              <img
+              <Image
+                alt="voltage divider equation"
                 className="w-1/3 md:w-36 object-contain"
                 src={imageVoltageDivider1.src}
+                height={imageVoltageDivider1.height}
+                width={imageVoltageDivider1.width}
               />
 
-              <img
+              <Image
+                alt="voltage divider schematic"
                 className="w-2/3 md:w-md object-contain"
                 src={imageVoltageDivider2.src}
+                height={imageVoltageDivider2.height}
+                width={imageVoltageDivider2.width}
               />
             </div>
 

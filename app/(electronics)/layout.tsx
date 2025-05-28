@@ -15,7 +15,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { SiRaspberrypi } from "@icons-pack/react-simple-icons";
+import {
+  SiArduino,
+  SiOrange,
+  SiRaspberrypi,
+} from "@icons-pack/react-simple-icons";
 import Link from "next/link";
 
 const geistSans = localFont({
@@ -59,30 +63,32 @@ const tools = [
       "Polynomial roots",
     ],
   },
-  // {
-  //   icon: LineChartIcon,
-  //   title: "Statistics Tools",
-  //   description:
-  //     "Analyze data sets with comprehensive statistical analysis tools",
-  //   features: [
-  //     "Mean, median, mode",
-  //     "Standard deviation",
-  //     "Correlation analysis",
-  //     "Regression models",
-  //   ],
-  // },
-  // {
-  //   icon: PieChartIcon,
-  //   title: "Graphing Calculator",
-  //   description:
-  //     "Visualize functions and data with our interactive graphing calculator",
-  //   features: [
-  //     "Function plotting",
-  //     "Data visualization",
-  //     "Multiple graph overlays",
-  //     "Customizable axes",
-  //   ],
-  // },
+  {
+    icon: SiOrange,
+    title: "Orange Pi Pinout",
+    path: "/electronics/pinouts/orange-pi",
+    description:
+      "Analyze data sets with comprehensive statistical analysis tools",
+    features: [
+      "Mean, median, mode",
+      "Standard deviation",
+      "Correlation analysis",
+      "Regression models",
+    ],
+  },
+  {
+    icon: SiArduino,
+    title: "Arduino Pinout",
+    path: "/electronics/pinouts/arduino",
+    description:
+      "Visualize functions and data with our interactive graphing calculator",
+    features: [
+      "Function plotting",
+      "Data visualization",
+      "Multiple graph overlays",
+      "Customizable axes",
+    ],
+  },
 ];
 
 export default function RootElectronicsLayout({
@@ -112,7 +118,7 @@ export default function RootElectronicsLayout({
                   <div className="flex flex-col items-center space-y-4 text-center">
                     <div className="space-y-2">
                       <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                        Electronics & Calculators
+                        Electronics & Hardware
                       </h1>
                       <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
                         Advanced mathematical tools for calculations, equation
