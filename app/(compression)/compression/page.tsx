@@ -1,3 +1,4 @@
+import FileUpload from "@/components/compression/image-compression/file-upload";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -6,7 +7,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -16,14 +16,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Slider } from "@/components/ui/slider";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Archive,
+  ArrowRight,
+  Download,
   FileArchive,
   ImageIcon,
-  Download,
   Upload,
-  ArrowRight,
 } from "lucide-react";
 
 export default function CompressionPage() {
@@ -102,68 +102,7 @@ export default function CompressionPage() {
                 value="image"
                 className="p-6 border rounded-lg mt-2 bg-background"
               >
-                <div className="space-y-6">
-                  <div className="border-2 border-dashed rounded-lg p-8 text-center">
-                    <div className="flex flex-col items-center space-y-4">
-                      <Upload className="h-10 w-10 text-muted-foreground" />
-                      <div className="space-y-2">
-                        <h3 className="font-medium">Drop your image here</h3>
-                        <p className="text-sm text-muted-foreground">
-                          Supports JPG, PNG, WebP up to 10MB
-                        </p>
-                      </div>
-                      <Button size="sm">Select File</Button>
-                    </div>
-                  </div>
-
-                  <div className="space-y-4">
-                    <div className="space-y-2">
-                      <div className="flex justify-between">
-                        <Label htmlFor="quality">Quality</Label>
-                        <span className="text-sm text-muted-foreground">
-                          80%
-                        </span>
-                      </div>
-                      <Slider defaultValue={[80]} max={100} step={1} />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="format">Output Format</Label>
-                      <Select defaultValue="original">
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select format" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="original">
-                            Same as original
-                          </SelectItem>
-                          <SelectItem value="jpg">JPG</SelectItem>
-                          <SelectItem value="png">PNG</SelectItem>
-                          <SelectItem value="webp">WebP</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="resize">Resize</Label>
-                      <Select defaultValue="none">
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select resize option" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="none">No resize</SelectItem>
-                          <SelectItem value="50">50% of original</SelectItem>
-                          <SelectItem value="75">75% of original</SelectItem>
-                          <SelectItem value="custom">
-                            Custom dimensions
-                          </SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-
-                    <Button className="w-full">Compress Image</Button>
-                  </div>
-                </div>
+                <FileUpload />
               </TabsContent>
               <TabsContent
                 value="file"
