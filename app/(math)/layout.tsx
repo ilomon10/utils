@@ -33,7 +33,7 @@ export default function RootMathLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
-          enableSystem
+          // enableSystem
           disableTransitionOnChange
         >
           <div className="relative flex min-h-screen flex-col">

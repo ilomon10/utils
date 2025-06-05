@@ -104,7 +104,7 @@ export default function RootElectronicsLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
-          enableSystem
+          // enableSystem
           disableTransitionOnChange
         >
           <div className="relative flex min-h-screen flex-col">

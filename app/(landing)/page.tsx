@@ -19,6 +19,8 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { navItems } from "@/lib/constants";
+import { BackgroundDot } from "@/components/ui/background-dot";
+import { Spotlight } from "@/components/ui/spotlight";
 
 export default function LandingPage() {
   const tools = navItems;
@@ -51,7 +53,8 @@ export default function LandingPage() {
   ];
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col relative antialiased">
+      <Spotlight />
       {/* Hero Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
         <div className="container mx-auto px-4 md:px-6">
@@ -229,8 +232,9 @@ export default function LandingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container mx-auto px-4 md:px-6">
+      <section className="w-full py-12 md:py-24 lg:py-32 relative">
+        <BackgroundDot />
+        <div className="container relative mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">

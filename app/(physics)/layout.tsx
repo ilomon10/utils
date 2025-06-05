@@ -33,7 +33,8 @@ export default function RootPhysicsLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
-          enableSystem
+          forcedTheme="light"
+          // enableSystem
           disableTransitionOnChange
         >
           <div className="relative flex min-h-screen flex-col">
