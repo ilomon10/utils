@@ -13,9 +13,19 @@ import { Upload } from "lucide-react";
 import { useDropzone } from "react-dropzone";
 import React, { FC, ReactElement, useCallback, useState } from "react";
 import FileCard from "./file-card";
+import { useForm, Controller, useWatch } from "react-hook-form";
+
+const defaultValues = {
+  quality: 80,
+  format: "original",
+  resize: 100
+}
 
 const FileUpload: FC = (): ReactElement => {
   const [selectedFiles, setSelectedFiles] = useState<Array<File>>([]);
+  const form = useForm({
+    defaultValues
+  })
   const onDrop = useCallback((files: Array<File>) => {
     if (files.length > 0) {
       setSelectedFiles(files);
@@ -29,8 +39,15 @@ const FileUpload: FC = (): ReactElement => {
       "image/webp": [],
     },
   });
+
+  const handleSubmit = (val: typeof defaultValues) => {
+    console.log("on:submit", val)
+  }
+
+  const quality = useWatch({ control: form.control, name: "quality" });
+
   return (
-    <div>
+    <form onSubmit={form.handleSubmit(handleSubmit)}>
       <div className="space-y-6">
         {selectedFiles.length > 0 ? (
           <div className="flex flex-row gap-2">
@@ -61,14 +78,16 @@ const FileUpload: FC = (): ReactElement => {
           <div className="space-y-2">
             <div className="flex justify-between">
               <Label htmlFor="quality">Quality</Label>
-              <span className="text-sm text-muted-foreground">80%</span>
+              <span className="text-sm text-muted-foreground">{quality}%</span>
             </div>
-            <Slider defaultValue={[80]} max={100} step={1} />
+            <Controller control={form.control} name="quality" render={({ field }) => (
+              <Slider value={[field.value]} name={field.name} max={100} step={1} onValueChange={([value]) => field.onChange(value)} />
+            )} />
           </div>
 
           <div className="space-y-2">
             <Label htmlFor="format">Output Format</Label>
-            <Select defaultValue="original">
+            <Select {...form.register("format")} defaultValue="original">
               <SelectTrigger>
                 <SelectValue placeholder="Select format" />
               </SelectTrigger>
@@ -83,23 +102,22 @@ const FileUpload: FC = (): ReactElement => {
 
           <div className="space-y-2">
             <Label htmlFor="resize">Resize</Label>
-            <Select defaultValue="none">
+            <Select {...form.register("resize")} defaultValue="none">
               <SelectTrigger>
                 <SelectValue placeholder="Select resize option" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="none">No resize</SelectItem>
+                <SelectItem value="100">No resize</SelectItem>
                 <SelectItem value="50">50% of original</SelectItem>
                 <SelectItem value="75">75% of original</SelectItem>
-                <SelectItem value="custom">Custom dimensions</SelectItem>
               </SelectContent>
             </Select>
           </div>
 
-          <Button className="w-full">Compress Image</Button>
+          <Button type="submit" className="w-full">Compress Image</Button>
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 
